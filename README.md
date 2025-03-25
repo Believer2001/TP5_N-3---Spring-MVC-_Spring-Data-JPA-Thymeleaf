@@ -9,3 +9,8 @@ Dans cette partie nous avons utiliser spring mvc , en creant la classe controlle
  et en definissant la page ``patients.htlm`` pour  afficher la liste des  patients dans le navigateur
 
 ![test](./captureDEcran/test21.png)
+
+Nous affichons les element en offrant la possibilite de  naviguer dans les differentes pages 
+via la  pagination
+
+![la pagination](./captureDEcran/test30.png)
