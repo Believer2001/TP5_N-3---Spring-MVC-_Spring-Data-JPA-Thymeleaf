@@ -15,8 +15,8 @@ via la pagination
 
 ![la pagination](./captureDEcran/test30.png)
 
- Afficher les element par recherche 
- [affichage](./captureDEcran/test41.png)
- [affichage](./captureDEcran/test42.png)
- [affichage](./captureDEcran/test43.png)
+ Rechercher les element par les noms 
+ ![affichage](./captureDEcran/test41.png)
+ ![affichage](./captureDEcran/test42.png)
+ ![affichage](./captureDEcran/test43.png)
  
