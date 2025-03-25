@@ -11,6 +11,12 @@ Dans cette partie nous avons utiliser spring mvc , en creant la classe controlle
 ![test](./captureDEcran/test21.png)
 
 Nous affichons les element en offrant la possibilite de  naviguer dans les differentes pages 
-via la  pagination
+via la pagination
 
 ![la pagination](./captureDEcran/test30.png)
+
+ Afficher les element par recherche 
+ [affichage](./captureDEcran/test41.png)
+ [affichage](./captureDEcran/test42.png)
+ [affichage](./captureDEcran/test43.png)
+ 
