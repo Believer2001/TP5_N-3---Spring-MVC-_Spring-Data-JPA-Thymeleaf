@@ -19,4 +19,7 @@ via la pagination
  ![affichage](./captureDEcran/test41.png)
  ![affichage](./captureDEcran/test42.png)
  ![affichage](./captureDEcran/test43.png)
+
+ Fonctionnalite de pour suprimer les elements de la liste
+![suppression](./captureDEcran/supprimer.png)
  
