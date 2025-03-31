@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css">
+    <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
@@ -14,7 +16,8 @@
          <form  method=" get" th:action="@{index}">
 
              <input type="text" name="keyword" th:value="${keyword}">
-             <button type="submit" class="btn btn-info">Chercher</button>
+             <button type="submit" class="btn btn-info">
+                  <i class="bi bi-search"> </i> </button>
          </form>
             <table class="table">
                 <thead>
@@ -34,7 +37,9 @@
                     <td th:text="${p.score}"></td>
                     <td>
                         <a  onclick="javascript:return confirm('Etes vous sur de vouloir suprimer?')"
-                            th:href="@{delete(id=${p.id},keyword=${keyword},page=${currentPage})}" class="btn btn-danger">Delete</a>
+                            th:href="@{delete(id=${p.id},keyword=${keyword},page=${currentPage})}" class="btn btn-danger">
+                             <i  class="bi bi-trash"> </i>
+                        </a>
                     </td>
                 </tr>
                 </thead>

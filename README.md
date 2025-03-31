@@ -22,4 +22,10 @@ via la pagination
 
  Fonctionnalite de pour suprimer les elements de la liste
 ![suppression](./captureDEcran/supprimer.png)
+
+VERION AMELIOREEE:
+
+Dans cette patie nous  allons ameliore l'application en  inserant la dépeendance de  bootstrap
+icon ce qui a permis dutiliser les icône de recherche et de suppression
+![version ameliorée](./captureDEcran/amelioration.png)
  
