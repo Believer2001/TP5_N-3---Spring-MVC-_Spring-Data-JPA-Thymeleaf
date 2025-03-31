@@ -28,4 +28,13 @@ VERION AMELIOREEE:
 Dans cette patie nous  allons ameliore l'application en  inserant la dépeendance de  bootstrap
 icon ce qui a permis dutiliser les icône de recherche et de suppression
 ![version ameliorée](./captureDEcran/amelioration.png)
+
+PARTIE 2 
+
+Dans cette partie nous avons définir un template de la  avec   qui va etre utiliser pour 
+décorer par les différentes pages de notre application
+![code](./captureDEcran/templatecode.png)
+![resultat](./captureDEcran/teplateresultat.png)
+
+
  
