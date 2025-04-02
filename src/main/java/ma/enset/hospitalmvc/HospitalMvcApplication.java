@@ -24,9 +24,9 @@ public class HospitalMvcApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       patientRepository.save(new Patient(null,"TSEH", new Date(),Math.random()>0.5?true:false,15));
-       patientRepository.save(new Patient(null,"alasanne", new Date(),Math.random()>0.5?true:false,40));
-       patientRepository.save(new Patient(null,"Mohammed", new Date(),Math.random()>0.5?true:false,30));
+      // patientRepository.save(new Patient(null,"TSEH Kokou Benoit", new Date(),Math.random()>0.5?true:false,115));
+      // patientRepository.save(new Patient(null,"alasanne Touré", new Date(),Math.random()>0.5?true:false,240));
+      // patientRepository.save(new Patient(null,"Mohammed daiif", new Date(),Math.random()>0.5?true:false,330));
 
 
     }

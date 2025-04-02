@@ -35,6 +35,9 @@ Dans cette partie nous avons définir un template de la  avec   qui va etre util
 décorer par les différentes pages de notre application
 ![code](./captureDEcran/templatecode.png)
 ![resultat](./captureDEcran/teplateresultat.png)
-
-
+  
+Après la  définissions de la page template, nous avons  avons définis un formulaire qui permet de 
+ d'insérer une nouvelle patients  et procéder à a validation du formulaire pour définir a taille maximale et minimale , le score minimal du patient
+![formulaire](./captureDEcran/formulaire.png)
+![validation](./captureDEcran/validation.png)
  
