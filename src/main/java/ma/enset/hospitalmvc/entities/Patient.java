@@ -13,6 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -25,7 +26,7 @@ public class Patient {
     @Size(min =4, max=40)
     private String nom;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dateNaissance;
+    private LocalDate dateNaissance;
     private boolean malade;
     @DecimalMin("100")
     private  int score ;

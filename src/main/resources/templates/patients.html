@@ -19,7 +19,7 @@
     <div class="card">
         <div class="card-header">Liste des  patients</div>
         <div class="card-body">
-         <form  method=" get" th:action="@{index}">
+         <form  method="get" th:action="@{index}">
 
              <input type="text" name="keyword" th:value="${keyword}">
              <button type="submit" class="btn btn-info">
@@ -43,9 +43,17 @@
                     <td th:text="${p.malade}"></td>
                     <td th:text="${p.score}"></td>
                     <td>
+                        <a th:href="@{editPatient(id=${p.id},page=${currentPage},keyword=${keyword})}" class="btn btn-success" th:title="modifier">
+
+                                <i class="bi bi-pencil"></i>
+
+                        </a>
+                    </td>
+
+                    <td>
                         <a  onclick="javascript:return confirm('Etes vous sur de vouloir suprimer?')"
-                            th:href="@{delete(id=${p.id},keyword=${keyword},page=${currentPage})}" class="btn btn-danger">
-                             <i  class="bi bi-trash"> </i>
+                            th:href="@{delete(id=${p.id},keyword=${keyword},page=${currentPage})}" class="btn btn-danger" title="supprimer">
+                            <i  class="bi bi-trash"> </i>
                         </a>
                     </td>
                 </tr>
@@ -53,9 +61,9 @@
             </table>
             <ul class="nav nav-fill">
                 <li th:each="page,status:${pages}">
-                    <a  th:href="@{/index(page=${status.index},keyword=${keyword})}"
+                    <a  th:href="@{index(page=${status.index},keyword=${keyword})}"
                         th:class="${currentPage==status.index?'btn btn-info ms-1':'btn btn-outline-info ms-1'}"
-                        th:text="${status.index}"></a>
+                        th:text="${status.index+1}"></a>
                 </li>
             </ul>
 

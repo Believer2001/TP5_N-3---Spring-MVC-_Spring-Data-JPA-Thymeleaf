@@ -24,7 +24,7 @@ public class PatientController {
 
     private PatientRepository patientRepository;
     @GetMapping("/index")
-  public  String index(Model model,
+    public  String index(Model model,
                      @RequestParam( name = "page",defaultValue = "0") int page ,
                      @RequestParam(name = "size", defaultValue = "5") int size ,
                      @RequestParam(name = "keyword", defaultValue = "") String kw )
@@ -71,8 +71,30 @@ public class PatientController {
         {
             if(bindingResult.hasErrors()) return "formpatients";
             patientRepository.save(patient);
-            return "formPatients";
+            return "redirect:/formPatients";
 
+
+    }
+
+    @PostMapping(path = "/saveUpdate")
+    public String saveUpdate(Model model, String  keyword,int page, @Valid Patient patient, BindingResult bindingResult)
+    {
+        if(bindingResult.hasErrors()) return "formPatients";
+        patientRepository.save(patient);
+        return "redirect:/index?page="+page+"&keyword="+keyword;
+
+
+    }
+
+    @GetMapping("/editPatient")
+    public String formPatients(Model model,Long id, String keyword,int page )
+    {
+        Patient patient=patientRepository.findById(id).orElse(null);
+        if (patient==null) throw  new RuntimeException("Patient not found");
+        model.addAttribute("patient",patient);
+        model.addAttribute("keyword",keyword);
+        model.addAttribute("page",page);
+        return "editPatient";
 
     }
 }

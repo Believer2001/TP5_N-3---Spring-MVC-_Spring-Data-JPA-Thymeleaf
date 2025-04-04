@@ -40,4 +40,33 @@ Après la  définissions de la page template, nous avons  avons définis un form
  d'insérer une nouvelle patients  et procéder à a validation du formulaire pour définir a taille maximale et minimale , le score minimal du patient
 ![formulaire](./captureDEcran/formulaire.png)
 ![validation](./captureDEcran/validation.png)
+
+
+PARTIE 3: SPRING SECURITY
+
+ Nous commençons tout d'abord par  l'ajout de  la dépendance spring sécurity a notre projet.nous redémarrons notre 
+application et nous essayons d'acceder au a l'application , nous pouvons voir la configuration par défaut suivant:
+![securiity 1](./captureDEcran/security1.png)
+
+Le nom de passe génére par defaut permet d'acceder à l'application :
+
+![securiity 2](./captureDEcran/security2.png)
+![securiity 3](./captureDEcran/security3.png)
+![securiity 4](./captureDEcran/security4.png)
+
+Nous allons personnalisé l configuration de la sécurité de l'application :
+ pour  cela nous definissons trois utilisateurs  dont un est un admin :
+
+![securiity 6](./captureDEcran/security6.png) 
+ Noous pouvons nous connecter avec l'utilisateur :
+- user: ```user1```
+- password: ```1234```
+![securiity 5](./captureDEcran/security5.png)
+
+
+
+
+
+
+
  
