@@ -17,7 +17,7 @@
 <div layout:fragment="content1">
  <div class="col-md-6 offset-3 row-md- ">
 
-    <form method="post" th:action="@{saveUpdate(page=${page},keyword=${keyword})}">
+    <form method="post" th:action="@{/admin/saveUpdate(page=${page},keyword=${keyword})}">
         <div >
             <label >ID</label>
             <input class="form-control" type="text" name="id" th:value="${patient.id}">

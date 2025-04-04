@@ -62,8 +62,27 @@ Nous allons personnalisé l configuration de la sécurité de l'application :
 - user: ```user1```
 - password: ```1234```
 ![securiity 5](./captureDEcran/security5.png)
+ 
+Nous allons pousser un peu plus loin  en affichant le  nom de l 'utilisateur 
+ qui est couranment   connecter ainsi que lui donner des droits.
+Pour ce faire nous avaons besoin  d'inclure une dépendance qui est  qui est ```thymeleaf extra securrity```
 
 
+![securiity 7](./captureDEcran/security7.png)
+ lorsque ll'utilisateur  user1 tante de faire des modfication alors qu' il n' ap as le droit , nous avons  le résultat suivant :
+![securiity 8](./captureDEcran/security8.png)
+ par contre l' admin peut faire ces modification :
+
+![securiity 9](./captureDEcran/security9.png)
+
+pour éviter que les utilisateurs n'ait pas  à voir le   
+fontionnalitées auxquelles il n' pas dori , noua allons faire
+la contextualisation. Et comme on peut le constater, les interface de ```user1``` et ```admin``` sont différentes
+![securiity 10](./captureDEcran/security10.png)
+![securiity 11](./captureDEcran/security11.png)
+
+
+ 
 
 
 

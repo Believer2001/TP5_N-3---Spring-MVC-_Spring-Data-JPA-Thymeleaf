@@ -38,12 +38,16 @@ public class SecurityConfig {
     }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        return httpSecurity
-                .formLogin(Customizer.withDefaults())
-                .authorizeHttpRequests(ar->ar.requestMatchers("/deletePatient/**").hasRole("ADMIN"))
-                .authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"))
-                .authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"))
-                .authorizeHttpRequests(ar->ar.anyRequest().authenticated())
-                .build();
+
+        httpSecurity.formLogin(Customizer.withDefaults());
+        httpSecurity.authorizeHttpRequests(ar->ar.requestMatchers("/deletePatient/**").hasRole("ADMIN"));
+        httpSecurity.authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"));
+        httpSecurity.authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"));
+        httpSecurity.authorizeHttpRequests(ar->ar.anyRequest().authenticated());
+        httpSecurity.exceptionHandling().accessDeniedPage("/notAuthorized");
+
+        return  httpSecurity.build();
+
+
     }
 }
