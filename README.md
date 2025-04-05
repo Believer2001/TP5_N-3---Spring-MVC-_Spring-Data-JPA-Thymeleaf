@@ -86,6 +86,26 @@ La personnalisation du formulaire de  validation
 
 ![vqlidqtion](./captureDEcran/security13.png)
 
+## Authenificatition Jdbc
+
+Nous allons à présent stocker les identifiantss dans une base de  données .
+Pour cela nouus allons connecter spring sécurity dans une  base de donnnées où l pouurra 
+ trouver les identifiants et les roles. pour cela , nous allons désactiver 
+inmemory authentification.
+
+- Nous ajoutons le schema de  la base de donnee quue nous aovons retorouver dans  la
+spring-core-security
+- Nous pouvons ajouter un fichier ```data.sql``` qui contient les identifiants dans un premier temps.
+
+![jdbcsecuriity](./captureDEcran/jdbcsecurity1.png)
+![jdbcsecuriity](./captureDEcran/jdbcsecurity2.png)
+
+
+
+
+
+
+
 
 
  
