@@ -69,7 +69,7 @@ Pour ce faire nous avaons besoin  d'inclure une dépendance qui est  qui est ```
 
 
 ![securiity 7](./captureDEcran/security7.png)
- lorsque ll'utilisateur  user1 tante de faire des modfication alors qu' il n' ap as le droit , nous avons  le résultat suivant :
+ lorsque l'utilisateur  user1 tante de faire des modification alors qu' il n' ap as le droit , nous avons  le résultat suivant :
 ![securiity 8](./captureDEcran/security8.png)
  par contre l' admin peut faire ces modification :
 
@@ -80,6 +80,12 @@ fontionnalitées auxquelles il n' pas dori , noua allons faire
 la contextualisation. Et comme on peut le constater, les interface de ```user1``` et ```admin``` sont différentes
 ![securiity 10](./captureDEcran/security10.png)
 ![securiity 11](./captureDEcran/security11.png)
+![securiity 12](./captureDEcran/security12.png)
+
+La personnalisation du formulaire de  validation 
+
+![vqlidqtion](./captureDEcran/security13.png)
+
 
 
  

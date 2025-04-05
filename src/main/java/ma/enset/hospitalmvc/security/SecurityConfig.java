@@ -1,9 +1,5 @@
 package ma.enset.hospitalmvc.security;
 
-
-
-
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -19,35 +15,42 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-
+    // Bean PasswordEncoder pour l'encodage des mots de passe
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); // Define the PasswordEncoder bean
+        return new BCryptPasswordEncoder();
     }
 
-
+    // Bean InMemoryUserDetailsManager pour gérer les utilisateurs en mémoire
     @Bean
-    public InMemoryUserDetailsManager inMemoryUserDetailsManager(PasswordEncoder passwordEncoder){
+    public InMemoryUserDetailsManager inMemoryUserDetailsManager(PasswordEncoder passwordEncoder) {
         String encodedPassword = passwordEncoder.encode("1234");
-        System.out.println("password: "+encodedPassword);
+        System.out.println("password: " + encodedPassword);
         return new InMemoryUserDetailsManager(
                 User.withUsername("user1").password(encodedPassword).roles("USER").build(),
                 User.withUsername("user2").password(encodedPassword).roles("USER").build(),
-                User.withUsername("admin").password(encodedPassword).roles("USER","ADMIN").build()
+                User.withUsername("admin").password(encodedPassword).roles("USER", "ADMIN").build()
         );
     }
+
+    // Configuration des règles de sécurité HTTP
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity
+                .formLogin()
+                .loginPage("/login") // Page de connexion personnalisée
+                .permitAll() // Permet l'accès à la page de login à tout le monde
+                .and()
+                .authorizeHttpRequests()
+                .requestMatchers("/webjars/**").permitAll() // Autoriser l'accès aux ressources statiques
+                .requestMatchers("/deletePatient/**").hasRole("ADMIN") // Accès réservé aux administrateurs
+                .requestMatchers("/admin/**").hasRole("ADMIN") // Accès réservé aux administrateurs
+                .requestMatchers("/user/**").hasRole("USER") // Accès réservé aux utilisateurs
+                .anyRequest().authenticated() // Toutes les autres requêtes nécessitent une authentification
+                .and()
+                .exceptionHandling()
+                .accessDeniedPage("/notAuthorized"); // Page d'accès refusé
 
-        httpSecurity.formLogin(Customizer.withDefaults());
-        httpSecurity.authorizeHttpRequests(ar->ar.requestMatchers("/deletePatient/**").hasRole("ADMIN"));
-        httpSecurity.authorizeHttpRequests(ar->ar.requestMatchers("/admin/**").hasRole("ADMIN"));
-        httpSecurity.authorizeHttpRequests(ar->ar.requestMatchers("/user/**").hasRole("USER"));
-        httpSecurity.authorizeHttpRequests(ar->ar.anyRequest().authenticated());
-        httpSecurity.exceptionHandling().accessDeniedPage("/notAuthorized");
-
-        return  httpSecurity.build();
-
-
+        return httpSecurity.build();
     }
 }
